@@ -10,7 +10,7 @@ class Coloreado:
 
 # --- b) Clase abstracta Figura ---
 class Figura(Coloreado):
-    def __init__(self, color="negro"):  # <- corregido __init__
+    def __init__(self, color="negro"): 
         self.color = color
 
     def setColor(self, color):
@@ -30,7 +30,7 @@ class Figura(Coloreado):
 
 # --- c) Clase Cuadrado ---
 class Cuadrado(Figura):
-    def __init__(self, lado, color="rojo"):  # <- corregido __init__
+    def __init__(self, lado, color="rojo"):  
         super().__init__(color)
         self.lado = lado
 
@@ -48,7 +48,7 @@ class Cuadrado(Figura):
 
 # --- d) Clase Circulo ---
 class Circulo(Figura):
-    def __init__(self, radio, color="azul"):  # <- corregido __init__
+    def __init__(self, radio, color="azul"): 
         super().__init__(color)
         self.radio = radio
 
@@ -63,7 +63,7 @@ class Circulo(Figura):
 
 # --- f) Programa de prueba con Tkinter ---
 class Aplicacion:
-    def __init__(self, ventana):  # <- corregido __init__
+    def __init__(self, ventana):  
         self.ventana = ventana
         self.ventana.title("Objetos Coloreados")
         self.ventana.geometry("400x300")
@@ -77,12 +77,12 @@ class Aplicacion:
         self.texto.pack()
 
     def generar_figuras(self):
-        self.texto.delete(1.0, tk.END)  # Limpiar el texto
+        self.texto.delete(1.0, tk.END)
         figuras = []
 
         # Generar 5 figuras aleatorias
         for _ in range(5):
-            tipo = random.randint(1, 2)  # 1: Cuadrado, 2: Círculo
+            tipo = random.randint(1, 2)  
             if tipo == 1:
                 lado = random.randint(1, 10)
                 figuras.append(Cuadrado(lado))
@@ -103,7 +103,7 @@ class Aplicacion:
             self.texto.insert(tk.END, "-" * 30 + "\n")
 
 # --- Ejecutar la aplicación ---
-if __name__ == "__main__":  # <- corregido __name__
+if __name__ == "__main__": 
     ventana = tk.Tk()
     app = Aplicacion(ventana)
     ventana.mainloop()
